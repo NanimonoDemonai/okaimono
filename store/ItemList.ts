@@ -11,8 +11,8 @@ export interface ItemListModel {
 export class ItemListController implements ItemListModel {
     private readonly _items: IObservableArray<ItemController>;
 
-    constructor(items?: ItemController[]) {
-        this._items = observable(items ? items : []);
+    constructor(items: ItemController[] = []) {
+        this._items = observable(items);
     }
 
     @computed get items(): ReadonlyArray<ItemController> {
